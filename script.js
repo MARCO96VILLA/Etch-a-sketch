@@ -10,11 +10,13 @@ function makeRows(rows, cols) {
     const gridItem = document.getElementsByClassName("grid-item");
     for (let i = 0; i < gridItem.length; i++) {
         gridItem[i].addEventListener("mouseover", function(){
-            gridItem[i].classList.add("grid-hover");
+            gridItem[i].style.backgroundColor = `rgb(${randNum()},${randNum()},${randNum()})`;
     });
 }
-
 };
+function randNum() {
+    return Math.floor(Math.random() * 256);
+}
 
 makeRows(16, 16);
 
